@@ -1,0 +1,26 @@
+{
+  "name": "shadow4android",
+  "version": "1.0.0",
+  "description": "[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-shadow4android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1188)",
+  "main": "js/main.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osfunapps/shadow4android.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osfunapps/shadow4android/issues"
+  },
+  "homepage": "https://github.com/osfunapps/shadow4android#readme",
+  "dependencies": {
+    "os-tools": "^1.4.1"
+  }
+}

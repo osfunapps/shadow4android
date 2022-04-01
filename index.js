@@ -50,6 +50,22 @@ function setShadow(x, y, b, c) {
     ctx.shadowColor = c;
 }
 
+async function newSaveFile(blob) {
+    // chunk is the Uint8Array object
+    appendFile
+    let chunk = await blob.arrayBuffer()
+    const out = '/Users/home/Downloads/out/patched.9.png'
+    const link = document.createElement('a');
+    // Browsers that support HTML5 download attribute
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', out);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 function exportAsPng() {
     const result = "filename.9.png";
     //Show ninepatches If hidden when exporting
@@ -67,9 +83,9 @@ function exportAsPng() {
     if (canvas.toBlobHD) {
         canvas.toBlobHD(async function (blob) {
             // console.log("dsa");
-            // await newSaveFile(blob)
+            await newSaveFile(blob)
             // console.log(blob);
-            saveAs(blob, result + ".9.png");
+            // saveAs(blob, result + ".9.png");
         });
     } else {
         canvas.toBlob(function (blob) {

@@ -73,6 +73,7 @@
 	if (HTMLCanvasElement && (!canvas_proto.toBlob || !canvas_proto.toBlobHD)) {
 		if (!canvas_proto.toBlob)
 			canvas_proto.toBlob = function(callback, type /*, ...args*/) {
+			console.log("HERE!!!")
 				if (!type) {
 					type = "image/png";
 				} if (this.mozGetAsFile) {
