@@ -1,30 +1,33 @@
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-shadow4android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1188)
+Introduction
+------------
 
-shadow4android
-==============
+This repo main purpose is to design shadows to Android views on runtime, using the forked library.
 
-*Android 9-patch shadow generator*
+Summary
+-------
+Shadows in Android are pretty annoying: they consume lots of memory and aren't modifiable much.
 
-#### Examples
-![](/examples/fill.png?raw=true "Shadow with Fill")
-![](/examples/transparent.png?raw=true "Shadow")
+That's why the best option is to create a 9patch shadow file for each view which stretches as the view bounds, without
+a loss of memory. 
 
-Layout XML files: 
+To create the right 9patch file, there is alot of design trial and error and that's why I've decided to do this dynamically 
+(in runtime).
 
-* [filled rect with shadow for content panels etc.](/examples/shadow_fill.xml?raw=true)
-* [transparent shadow for photos, textures  etc.](/examples/shadow_transparent.xml?raw=true)
+How this repo works:
+--------------------
+This library relies on the forked repo of inloop. 
 
-> [Youtube  example](https://www.youtube.com/watch?v=ZOK6gEH8qIU)
-
-### License
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-    http://www.apache.org/licenses/LICENSE-2.0
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+- Using the html, the user can design 9patch shadows and download them it's computer
+- Each time a user will download a new shadow, the shadow will be auto streamed to the Android device replacing the current
+shadow, in the running app
+  
+To use:
+-------
+1) Run the [index.html](index.html) file from the repo
+2) If you're using Chrome, Open "Settings", search for "Downloads" and disable the "Ask where to save each file before downloading"
+3) Download one of the shadows to a directory of your choice
+4) Use the python module: https://github.com/osfunapps/os_android_shadow_generator-py to stream the shadow to your device
+5) When the Python module is running and looking for new shadow files, each time you'll download a new shadow 
+   file it will auto stream to your device
+6) Add the  [ShadowGenerator.kt](srcs/ShadowGenerator.kt) file to your Android project and add the views to it (read it's instructions)
+7) Remember the shadow files you've used (write them down) to download them later on to your project. These are the 9patch shadow files you desired
