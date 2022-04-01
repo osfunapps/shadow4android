@@ -1,7 +1,7 @@
 Introduction
 ------------
 
-This repo main purpose is to design shadows to Android views on runtime, using the forked library.
+This repo main purpose is to design android shadow on runtime, on a running device, using the forked library.
 
 Summary
 -------
@@ -13,7 +13,7 @@ a loss of memory.
 To create the right 9patch file, there is alot of design trial and error and that's why I've decided to do this dynamically 
 (in runtime).
 
-How this repo works:
+How this repo works
 --------------------
 This library relies on the forked repo of inloop. 
 
@@ -21,7 +21,7 @@ This library relies on the forked repo of inloop.
 - Each time a user will download a new shadow, the shadow will be auto streamed to the Android device replacing the current
 shadow, in the running app
   
-To use:
+To use
 -------
 1) Run the [index.html](index.html) file from the repo
 2) If you're using Chrome, Open "Settings", search for "Downloads" and disable the "Ask where to save each file before downloading"
